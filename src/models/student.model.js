@@ -20,10 +20,11 @@ class Student {
       return student;
   }
 
-  filter(cohort){
+  filter(filterString){
+    const [key, value] = filterString.split("=");
     // filter students by cohort
     const students = this.students.filter((std) => {
-      return std.cohorts.includes(cohort);
+      return std[key] === value;
     });
     return {
       count: students.length,
