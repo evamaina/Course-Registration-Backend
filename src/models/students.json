@@ -1,0 +1,40 @@
+[
+  {
+    "firstName": "Eve",
+    "lastName": "Maynor",
+    "email": "evemaynor@gmail.com",
+    "cohorts": [
+      "morning",
+      "evening"
+    ],
+    "id": "1"
+  },
+  {
+    "firstName": "New",
+    "lastName": "student",
+    "email": "newstudent@gmail.com",
+    "cohorts": [
+      "evening",
+      "afternoon"
+    ],
+    "id": "2"
+  },
+  {
+    "firstName": "Sio",
+    "lastName": "Koti",
+    "email": "siokoti@gmail.com",
+    "cohorts": [
+      "morning"
+    ],
+    "id": "3"
+  },
+  {
+    "firstName": "Marry",
+    "lastName": "Juana",
+    "email": "MarryJuana@gmail.com",
+    "cohorts": [
+      "afternoon"
+    ],
+    "id": "4"
+  }
+]

@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.org/evamaina/ExpressApp.svg?branch=master)](https://travis-ci.org/evamaina/ExpressApp)
-
-[![Coverage Status](https://coveralls.io/repos/github/evamaina/ExpressApp/badge.svg)](https://coveralls.io/github/evamaina/ExpressApp)
-
 # ExpressApp
 
 NodeJs Express RESTful API
@@ -11,7 +7,7 @@ Ensure you have nodejs >= 12 installed
 
 Clone
 
-- `git clone https://github.com/evamaina/ExpressApp` 
+- `git clone https://github.com/evamaina/Course-Registration-Backend` 
 
 Install dependencies
 
@@ -35,5 +31,6 @@ Node:
 
 | VERB   | URL                                | ACTION                                     |
 | ------ | ---------------------------------- | ------------------------------------------ |
-| GET    | /api/users                         | Get all users                              |
-| GET    | /api/users/:id                     | Get user by id  (currently only 1-6)       |
+| GET    | /api/students                      | Get all students                           |
+| GET    | /api/students?cohort=""            | Filter based on cohort                     |
+| POST   | /api/enroll/                       | Enroll to a course                         |
