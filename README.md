@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/evamaina/Course-Registration-Backend.svg?branch=development)](https://travis-ci.org/evamaina/Course-Registration-Backend)
+[![Coverage Status](https://coveralls.io/repos/github/evamaina/Course-Registration-Backend/badge.svg?branch=development)](https://coveralls.io/github/evamaina/Course-Registration-Backend?branch=master)
 # ExpressApp
 
 NodeJs Express RESTful API
