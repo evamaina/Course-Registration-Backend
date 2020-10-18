@@ -1,6 +1,8 @@
 import express from 'express';
 import Student from './models/student.model';
 import {validateStudent} from './models/validator';
+import { sendEnrollmentEmail } from './util';
+
 const router = express.Router();
 
 router.get('/students', (req, res) => {
@@ -18,7 +20,9 @@ router.get('/students', (req, res) => {
 router.post('/enroll', validateStudent(), (req, res) => {
   const studentModel = new Student();
   const { body } = req;
+  console.log("enrolling ==> ", body);
   const student = studentModel.create(body);
+  sendEnrollmentEmail(student);
   const status = 201;
   return res.status(status).json(student);
 });
