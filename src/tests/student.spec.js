@@ -21,7 +21,7 @@ describe('GET /students', () => {
       .set('Accept', 'application/json')
       .expect(200)
       .end((err, { body }) => {
-        assert(body.length, 6);
+        assert(body.length > 0);
         // console.log(body[6]);
         done();
       });
