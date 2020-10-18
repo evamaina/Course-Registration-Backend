@@ -1,0 +1,61 @@
+[
+   {
+     "username": "Eve",
+     "password": "password1",
+     "hobbies": [
+       "gate",
+       "keeping"
+     ],
+     "id": "1"
+   },
+   {
+     "username": "Miah",
+     "password": "password2",
+     "hobbies": [
+       "teaching",
+       "golfing"
+     ],
+     "id": "2"
+   },
+   {
+     "username": "Doe",
+     "password": "password3",
+     "hobbies": [
+       "engineering",
+       "role",
+       "playing"
+     ],
+     "id": "3"
+   },
+   {
+     "username": "Nerab",
+     "password": "password88",
+     "hobbies": [
+       "playing",
+       "house",
+       "generally",
+       "speaking"
+     ],
+     "id": "4"
+   },
+   {
+     "username": "Cain",
+     "password": "password5",
+     "hobbies": [
+       "incredulous",
+       "knitting",
+       "not knotting"
+     ],
+     "id": "5"
+   },
+   {
+     "username": "Ajaruva",
+     "password": "password34",
+     "hobbies": [
+       "incredulous",
+       "knitting",
+       "not knotting"
+     ],
+     "id": "6"
+   }
+ ]
