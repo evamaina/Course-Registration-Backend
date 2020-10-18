@@ -24,7 +24,7 @@ describe('GET /students', () => {
         assert(body.length > 0);
         // console.log(body[6]);
         done();
-      });
+      }); 
   });
 
   it('returns a 404 error for an invalid url path', (done) => {
