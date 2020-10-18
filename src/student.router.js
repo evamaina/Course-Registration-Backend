@@ -1,6 +1,6 @@
 import express from 'express';
 import Student from './models/student.model';
-
+import {validateStudent} from './models/validator';
 const router = express.Router();
 
 router.get('/students', (req, res) => {
@@ -15,7 +15,7 @@ router.get('/students', (req, res) => {
   return res.status(200).json(students);
 });
 
-router.post('/enroll', (req, res) => {
+router.post('/enroll', validateStudent(), (req, res) => {
   const studentModel = new Student();
   const { body } = req;
   const student = studentModel.create(body);
