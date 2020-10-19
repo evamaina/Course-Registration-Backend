@@ -1,62 +1,36 @@
-import { checkSchema } from 'express-validator'
 
-export const validateStudent = () => checkSchema({
-  firstName: {
-    in: "body",
-    isAlpha: {
-      // To negate a validator
-      errorMessage: "Name should be alphabetic",
-    },
-    isEmpty: {
-      errorMessage: "Name should not be empty"
-    },
-    optional: false
-  },
-  lastName: {
-    in: "body",
-    isAlpha: {
-      // To negate a validator
-      errorMessage: "Name should be alphabetic",
-    },
-    isEmpty: {
-      errorMessage: "Name should not be empty"
-    },
-    optional: false
-  },
-  email: {
-    in: "body",
-    isString: {
-      // To negate a validator
-      errorMessage: "Email should be alphabetic",
-    },
-    isEmpty: {
-      errorMessage: "Name should not be empty"
-    },
-    isEmail: {
-      errorMessage: "Enter a valid email"
-    },
-    optional: false
-  },
-  cohort: {
-    in: "body",
-    isAlpha: {
-      // To negate a validator
-      errorMessage: "Cohort should be alphabetic",
-    },
-    isEmpty: {
-      errorMessage: "Cohort should not be empty"
-    },
-    optional: false
-  },
-  registrationNumber: {
-    in: "body",
-    isString: {
-      // To negate a validator
-      errorMessage: "Reg Number should be a string",
-    },
-    isEmpty: {
-      errorMessage: "Name should not be empty"
-    },
-    optional: false
-  }
+import Joi from 'joi';
+
+
+const schema = Joi.object({
+  firstName: Joi.string()
+      .alphanum()
+      .max(30)
+      .required(),
+
+  lastName: Joi.string()
+      .alphanum()
+      .max(30)
+      .required(),
+
+  registrationNumber: Joi.string()
+      .alphanum()
+      .min(3)
+      .max(30)
+      .required(),
+
+  email: Joi.string()
+      .required()
+      .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+
+  cohort: Joi.string()
+      .required(),
 })
+
+export const validateStudent = (req, res, next) => {
+  const student = req.body;
+  const { error } = schema.validate(student);
+
+  if (error) return res.status(400).send({ error });
+  else return next();
+}
