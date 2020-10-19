@@ -8,11 +8,10 @@ const router = express.Router();
 router.get('/students', (req, res) => {
   const studentModel = new Student();
   let students = studentModel.getAll();
-  if(!!req.query){
-    // user wants to filter
-    const [key, ] = Object.keys(req.query);
-    const value = req.query[key];
-    students = studentModel.filter(`${key}=${value}`);
+  const { cohort } = req.query;
+  if(!!cohort){
+    // user wants to filter cohort
+    students = studentModel.filter(`$cohort=${cohort}`);
   }
   return res.status(200).json(students);
 });
