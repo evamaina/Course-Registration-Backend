@@ -9,7 +9,7 @@
   "scripts": {
     "test": "nyc mocha 'src/tests/**/*.js' --recursive --require @babel/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "build": "babel src -d build",
+    "build": "babel src -d build --copy-files",
     "dev-start": "babel-watch src/server.js",
     "start": "node build/server.js"
   },
