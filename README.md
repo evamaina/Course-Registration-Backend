@@ -15,6 +15,11 @@ Install dependencies
 
 - `npm install`
 
+Setup environment
+
+- Ensure you have the following in your environment variables: 
+  - SENDGRID_API_KEY
+
 ### Start
 
 Live-Reload: 
