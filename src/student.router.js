@@ -17,7 +17,7 @@ router.get('/students', (req, res) => {
   return res.status(200).json(students);
 });
 
-router.post('/enroll', validateStudent(), (req, res) => {
+router.post('/enroll', validateStudent, (req, res) => {
   const studentModel = new Student();
   const { body } = req;
   const student = studentModel.create(body);
