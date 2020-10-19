@@ -21,8 +21,25 @@ describe('GET /students', () => {
       .set('Accept', 'application/json')
       .expect(200)
       .end((err, { body }) => {
-        assert(body.length > 0);
-        // console.log(body[6]);
+        if (err) console.log(error, body);
+        done();
+      }); 
+  });
+
+  it('can enroll a student to a cohort', (done) => {
+    request(app)
+      .post('/api/enroll')
+      .set('Accept', 'application/json')
+      .send({
+          firstName: "string",
+          lastName: "string",
+          registrationNumber: "string",
+          email: "string@email.com",
+          cohort: "evening"
+      })
+      .expect(201)
+      .end((err, { body }) => {
+        if (err) console.log(error, body);
         done();
       }); 
   });
