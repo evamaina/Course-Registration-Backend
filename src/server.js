@@ -3,7 +3,7 @@ import app from './app';
 
 const server = http.createServer(app);
 
-const port = 3002;
+const port = process.env.PORT || 3002;
 
 server.listen(port, () => {
   // eslint-disable-next-line no-console
