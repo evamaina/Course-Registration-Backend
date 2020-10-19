@@ -4,17 +4,14 @@ import Joi from 'joi';
 
 const schema = Joi.object({
   firstName: Joi.string()
-      .alphanum()
       .max(30)
       .required(),
 
   lastName: Joi.string()
-      .alphanum()
       .max(30)
       .required(),
 
   registrationNumber: Joi.string()
-      .alphanum()
       .min(3)
       .max(30)
       .required(),

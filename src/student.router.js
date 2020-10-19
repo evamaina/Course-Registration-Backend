@@ -20,6 +20,10 @@ router.get('/students', (req, res) => {
 router.post('/enroll', validateStudent, (req, res) => {
   const studentModel = new Student();
   const { body } = req;
+
+  // make sure student with the same regNo has not registered before
+  const {count} = studentModel.filter(`registrationNumber=${body.registrationNumber}`);
+  if (count > 0) return res.status(400).send({error: "A student with the same registration number has already enrolled"})
   const student = studentModel.create(body);
   sendEnrollmentEmail(student);
   const status = 201;
