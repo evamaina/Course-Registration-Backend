@@ -36,3 +36,17 @@ Node:
 | GET    | /api/students                      | Get all students                           |
 | GET    | /api/students?cohort=""            | Filter based on cohort                     |
 | POST   | /api/enroll/                       | Enroll to a course                         |
+
+### Enroll
+Body:
+```
+
+{
+    firstName: string,
+    lastName: string,
+    registrationNumber: string,
+    email: string,
+    cohort: string
+}
+
+```

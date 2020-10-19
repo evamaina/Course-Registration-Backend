@@ -20,7 +20,6 @@ router.get('/students', (req, res) => {
 router.post('/enroll', validateStudent(), (req, res) => {
   const studentModel = new Student();
   const { body } = req;
-  console.log("enrolling ==> ", body);
   const student = studentModel.create(body);
   sendEnrollmentEmail(student);
   const status = 201;
